@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TelegramProxy.PK — Free Fast Proxies for Pakistan</title>
+<meta name="description" content="Free working Telegram proxies for Pakistan. One-tap connect, always updated, always free.">
+<meta name="keywords" content="telegram proxy pakistan, free telegram proxy, telegram unblock pakistan, proxy pk">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --card: #111827;
+    --card2: #1a2236;
+    --accent: #2fffb4;
+    --accent2: #00c8ff;
+    --text: #e8f0ff;
+    --muted: #7a8faa;
+    --border: rgba(255,255,255,0.07);
+    --glow: 0 0 40px rgba(47,255,180,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Background grid */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(47,255,180,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(47,255,180,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Glow orbs */
+  .orb1 {
+    position: fixed;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(47,255,180,0.08) 0%, transparent 70%);
+    top: -100px; left: -100px;
+    pointer-events: none; z-index: 0;
+    animation: floatOrb 8s ease-in-out infinite alternate;
+  }
+  .orb2 {
+    position: fixed;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0,200,255,0.07) 0%, transparent 70%);
+    bottom: -100px; right: -100px;
+    pointer-events: none; z-index: 0;
+    animation: floatOrb 10s ease-in-out infinite alternate-reverse;
+  }
+
+  @keyframes floatOrb {
+    from { transform: translate(0,0); }
+    to { transform: translate(30px, 30px); }
+  }
+
+  /* Nav */
+  nav {
+    position: relative; z-index: 10;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+  }
+
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+  }
+
+  .nav-badge {
+    background: rgba(47,255,180,0.1);
+    border: 1px solid rgba(47,255,180,0.3);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative; z-index: 5;
+    text-align: center;
+    padding: 80px 20px 60px;
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(47,255,180,0.08);
+    border: 1px solid rgba(47,255,180,0.2);
+    color: var(--accent);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 1.5s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  h1 span {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    color: var(--muted);
+    font-size: 1.1rem;
+    max-width: 480px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-stats {
+    display: flex; justify-content: center; gap: 40px;
+    animation: fadeUp 0.6s 0.3s ease both;
+    margin-bottom: 20px;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .stat-label {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-top: 2px;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Search */
+  .search-wrap {
+    position: relative; z-index: 5;
+    max-width: 500px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .search-box {
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 20px 14px 48px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .search-box:focus {
+    border-color: rgba(47,255,180,0.4);
+    box-shadow: 0 0 0 3px rgba(47,255,180,0.08);
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 36px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 1.1rem;
+  }
+
+  /* Proxy Grid */
+  .container {
+    position: relative; z-index: 5;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .proxy-grid {
+    display: grid;
+    gap: 16px;
+  }
+
+  .proxy-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    animation: fadeUp 0.5s ease both;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .proxy-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(47,255,180,0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .proxy-card:hover {
+    border-color: rgba(47,255,180,0.25);
+    transform: translateY(-2px);
+    box-shadow: var(--glow);
+  }
+
+  .proxy-card:hover::before { opacity: 1; }
+
+  .proxy-card:nth-child(1) { animation-delay: 0.1s; }
+  .proxy-card:nth-child(2) { animation-delay: 0.2s; }
+  .proxy-card:nth-child(3) { animation-delay: 0.3s; }
+
+  .proxy-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .proxy-flag {
+    font-size: 1.5rem;
+  }
+
+  .proxy-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .proxy-badges {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .badge {
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .badge-green {
+    background: rgba(47,255,180,0.1);
+    color: var(--accent);
+    border: 1px solid rgba(47,255,180,0.2);
+  }
+
+  .badge-blue {
+    background: rgba(0,200,255,0.1);
+    color: var(--accent2);
+    border: 1px solid rgba(0,200,255,0.2);
+  }
+
+  .badge-gray {
+    background: rgba(255,255,255,0.05);
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+
+  .proxy-meta {
+    display: flex; gap: 20px;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .proxy-meta span { display: flex; align-items: center; gap: 5px; }
+
+  .connect-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, var(--accent), #00e5a0);
+    color: #0a0e1a;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 12px 22px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+    box-shadow: 0 4px 20px rgba(47,255,180,0.25);
+  }
+
+  .connect-btn:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 28px rgba(47,255,180,0.4);
+  }
+
+  .connect-btn:active { transform: scale(0.97); opacity: 0.9; }
+
+  /* Channel CTA */
+  .channel-cta {
+    position: relative; z-index: 5;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, rgba(47,255,180,0.08), rgba(0,200,255,0.08));
+    border: 1px solid rgba(47,255,180,0.2);
+    border-radius: 20px;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .cta-text h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .cta-text p { color: var(--muted); font-size: 0.9rem; }
+
+  .channel-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--card2);
+    border: 1px solid rgba(47,255,180,0.3);
+    color: var(--accent);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 12px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+
+  .channel-btn:hover {
+    background: rgba(47,255,180,0.1);
+    transform: scale(1.03);
+  }
+
+  /* Footer */
+  footer {
+    position: relative; z-index: 5;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* Status dot */
+  .status-dot {
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 1.5s ease infinite;
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 16px 20px; }
+    .hero { padding: 50px 20px 40px; }
+    .hero-stats { gap: 24px; }
+    .proxy-card { grid-template-columns: 1fr; }
+    .connect-btn { width: 100%; justify-content: center; }
+    .cta-card { flex-direction: column; text-align: center; }
+    .channel-btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="orb1"></div>
+<div class="orb2"></div>
+
+<nav>
+  <div class="logo">TelegramProxy.PK</div>
+  <div class="nav-badge"><span class="status-dot"></span> &nbsp;All Proxies Online</div>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag">🇵🇰 Pakistan's #1 Free Proxy List</div>
+  <h1>Connect Telegram<br><span>Without Limits</span></h1>
+  <p class="hero-sub">Free, fast, and always working Telegram proxies. One tap to connect — no apps, no signup needed.</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num" id="userCount">2.4K+</div>
+      <div class="stat-label">Daily Users</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">99%</div>
+      <div class="stat-label">Uptime</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="proxyCount">1</div>
+      <div class="stat-label">Proxies</div>
+    </div>
+  </div>
+</section>
+
+<div class="search-wrap">
+  <span class="search-icon">🔍</span>
+  <input class="search-box" type="text" placeholder="Search proxies by location, speed..." id="searchInput" oninput="filterProxies()">
+</div>
+
+<div class="container">
+  <div class="section-title">✦ Active Proxies</div>
+  <div class="proxy-grid" id="proxyGrid">
+
+    <!-- Proxy 1 -->
+    <div class="proxy-card" data-name="Germany Frankfurt Fast">
+      <div>
+        <div class="proxy-header">
+          <span class="proxy-flag">🇩🇪</span>
+          <span class="proxy-name">Germany — Frankfurt</span>
+        </div>
+        <div class="proxy-badges">
+          <span class="badge badge-green">✅ Working</span>
+          <span class="badge badge-blue">⚡ Fast</span>
+          <span class="badge badge-gray">🔒 MTProto</span>
+          <span class="badge badge-gray">Port 443</span>
+        </div>
+        <div class="proxy-meta">
+          <span>🕐 Added June 2026</span>
+          <span>🌍 24/7 Online</span>
+          <span><span class="status-dot"></span> &nbsp;Live</span>
+        </div>
+      </div>
+      <a class="connect-btn" href="https://t.me/proxy?server=167.233.22.85&port=443&secret=946fd95024ffa1d431a565ea92a63b57" target="_blank">
+        Connect →
+      </a>
+    </div>
+
+  </div>
+
+  <div id="noResult" style="display:none; text-align:center; color:var(--muted); padding:40px 0;">
+    No proxies found. Try a different search.
+  </div>
+</div>
+
+<div class="channel-cta">
+  <div class="cta-card">
+    <div class="cta-text">
+      <h3>📢 Get New Proxies Instantly</h3>
+      <p>Join our Telegram channel — we post new working proxies daily, free forever.</p>
+    </div>
+    <a class="channel-btn" href="https://t.me/fastproxy000" target="_blank">
+      📲 Join @fastproxy000
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 TelegramProxy.PK — Free proxies for everyone 🇵🇰 &nbsp;|&nbsp; <a href="https://t.me/fastproxy000">Telegram Channel</a></p>
+</footer>
+
+<script>
+  // Counter animation
+  function animateCount(el, target, suffix) {
+    let start = 0;
+    const step = target / 40;
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { el.textContent = target + suffix; clearInterval(timer); return; }
+      el.textContent = Math.floor(start) + suffix;
+    }, 30);
+  }
+
+  // Search filter
+  function filterProxies() {
+    const q = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('.proxy-card');
+    let visible = 0;
+    cards.forEach(card => {
+      const match = card.dataset.name.toLowerCase().includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    document.getElementById('noResult').style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  // Update proxy count
+  document.getElementById('proxyCount').textContent = document.querySelectorAll('.proxy-card').length;
+</script>
+
+</body>
+</html>
