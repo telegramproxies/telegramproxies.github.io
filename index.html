@@ -479,7 +479,12 @@
 <span><span class="status-dot"></span> &nbsp;Live</span>
 </div>
 </div>
-<a class="connect-btn" href="https://t.me/proxy?server=4.154.181.32&port=443&secret=eebf1cd31f99d71ecdba2bfff9474b13fa7777772e676f6f676c652e636f6d" target="_blank">
+<a class="connect-btn"
+   href="https://t.me/proxy?server=4.154.181.32&amp;port=443&amp;secret=eebf1cd31f99d71ecdba2bfff9474b13fa7777772e676f6f676c652e636f6d"
+   data-server="4.154.181.32"
+   data-port="443"
+   data-secret="eebf1cd31f99d71ecdba2bfff9474b13fa7777772e676f6f676c652e636f6d"
+   onclick="return connectProxy(event, this)">
 Connect →
 </a>
 </div>
@@ -508,6 +513,41 @@ Connect →
 </footer>
 
 <script>
+  // Try to open the native Telegram app directly (tg://) so the browser
+  // is bypassed. If the app doesn't open within the timeout (not installed,
+  // desktop without client, etc.), fall back to the t.me web link.
+  function connectProxy(e, el) {
+    e.preventDefault();
+
+    const server = el.dataset.server;
+    const port   = el.dataset.port;
+    const secret = el.dataset.secret;
+
+    const tgLink  = `tg://proxy?server=${server}&port=${port}&secret=${secret}`;
+    const webLink = `https://t.me/proxy?server=${server}&port=${port}&secret=${secret}`;
+
+    let appOpened = false;
+    const onBlur = () => { appOpened = true; };
+    window.addEventListener('blur', onBlur, { once: true });
+    document.addEventListener('visibilitychange', function onVis() {
+      if (document.hidden) appOpened = true;
+      document.removeEventListener('visibilitychange', onVis);
+    });
+
+    // Attempt native app scheme first
+    window.location.href = tgLink;
+
+    // Fallback to the web link (opens Telegram Web / app-store prompt)
+    setTimeout(() => {
+      window.removeEventListener('blur', onBlur);
+      if (!appOpened) {
+        window.open(webLink, '_blank');
+      }
+    }, 1200);
+
+    return false;
+  }
+
   function filterProxies() {
     const q = document.getElementById('searchInput').value.toLowerCase();
     const cards = document.querySelectorAll('.proxy-card');
